@@ -45,3 +45,5 @@ target/
 
 # PDT-specific
 .buildpath
+
+.DS_Store

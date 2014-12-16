@@ -1,0 +1,8 @@
+hadoop jar mapreduce-samples-1.0-SNAPSHOT.jar \
+	com.clevelandflash.WordCount \
+	/user/mmiklavcic/distributed-cache/in \
+	/user/mmiklavcic/distributed-cache/out \
+	/user/mmiklavcic/distributed-cache/cache/zipfile.zip#myzip \
+	fileinzip.txt \
+	-Dmapreduce.job.cache.archives=hdfs://nn.clevelandflash.com/user/mmiklavcic/distributed-cache/cache/zipfile.zip#myzip \
+	–Dmapreduce.job.create.symlink=yes
