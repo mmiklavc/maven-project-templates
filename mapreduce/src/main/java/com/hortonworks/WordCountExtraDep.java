@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.*;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class WordCount {
+public class WordCountExtraDep {
 
     public static class TokenizerMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
@@ -96,7 +96,7 @@ public class WordCount {
         // trying to add cache archive of form "zipfile.zip#myzip" fails
         // symlinks do not appear to work
         job.addCacheArchive(new Path(cacheFile).toUri());
-        job.setJarByClass(WordCount.class);
+        job.setJarByClass(WordCountExtraDep.class);
         job.setMapperClass(TokenizerMapper.class);
         job.setReducerClass(SumReducer.class);
         job.setOutputKeyClass(Text.class);
